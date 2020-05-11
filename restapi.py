@@ -1,5 +1,13 @@
 import argparse
 
+
+class Product:
+    def __init__(self, title, description):
+        print(
+            f"Product created title='{title}' description='{description}'"
+        )
+
+
 CREATE = 'create'
 UPDATE = 'update'
 LIST = 'list'
@@ -21,7 +29,19 @@ def main():
         "model",
         choices=(PRODUCT, PLAN)
     )
-    parser.parse_args()
+    parser.add_argument(
+        "-t", "--title",
+        default="Default title"
+    )
+    parser.add_argument(
+        "-d", "--description",
+        default="Default description"
+    )
+    args = parser.parse_args()
+
+    if args.operation == CREATE:
+        if args.model == PRODUCT:
+            Product(title=args.title, description=args.description)
 
 
 if __name__ == '__main__':
