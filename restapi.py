@@ -37,7 +37,14 @@ def main():
         "-d", "--description",
         default="Default description"
     )
+    parser.add_argument(
+        "-s", "--tls",
+        action="store_true"
+    )
     args = parser.parse_args()
+
+    if args.tls:
+        print("REST API over TLS")
 
     if args.operation == CREATE:
         if args.model == PRODUCT:
