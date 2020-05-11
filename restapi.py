@@ -14,7 +14,7 @@ LIST = 'list'
 DELETE = 'delete'
 
 PRODUCT = 'product'
-PLAN = 'plan'
+COORD = 'coord'
 
 
 def main():
@@ -27,7 +27,7 @@ def main():
     )
     parser.add_argument(
         "model",
-        choices=(PRODUCT, PLAN)
+        choices=(PRODUCT, COORD)
     )
     parser.add_argument(
         "-t", "--title",
