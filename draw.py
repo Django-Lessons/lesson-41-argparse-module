@@ -11,7 +11,7 @@ class Square:
 
 
 class Circle:
-    def __init__(self, p1, center):
+    def __init__(self, p1, radius):
         print("Circle")
 
 
@@ -49,9 +49,9 @@ def main():
         print("...")
 
     if args.shape == CIRCLE:
-        Circle()
+        Circle(args.point1, args.radius)
     elif args.shape == SQUARE:
-        Square()
+        Square(args.point1, args.point2)
 
 
 if __name__ == '__main__':
